@@ -21,7 +21,7 @@
     currentBook: {
       title:       "Atomic Habits",
       author:      "James Clear",
-      sessionDate: "April 2025",
+      sessionDate: "Thursday, April 23 · 4:00 pm",
       coverImage:  "images/atomic-habits.jpg",  // place cover images in the images/ folder
       summary:     "Tiny habits compound into remarkable outcomes. Clear's framework for building systems — and breaking the ones that aren't working — applies directly to how you run a business, a team, and a day.",
       topics: [
@@ -172,7 +172,7 @@
     <li>Why you want to attend</li>
     <li>Confirmation that you'll read the book beforehand</li>
   </ul>
-  <a class="btn-primary" href="mailto:josh@swifthm.com?subject=Swift%20Book%20Club%20%E2%80%94%20Invite%20Request">Request an Invite</a>
+  <a class="btn-primary" href="/cdn-cgi/l/email-protection#1a707569725a696d737c6e72773479757725696f78707f796e27496d737c6e3f282a587575713f282a59766f783f282a3f5f283f222a3f232e3f282a53746c736e7f3f282a487f6b6f7f696e">Request an Invite</a>
   <p style="font-size:13px; margin-top:24px; opacity:0.5;">Requests reviewed personally. You'll hear back directly.</p>
 </div>
 
@@ -181,7 +181,7 @@
   <p class="footer-name">Josh High</p>
   <p class="footer-company">Swift Home Mortgage</p>
   <p class="footer-meta">
-    <a href="mailto:josh@swifthm.com">josh@swifthm.com</a>
+    <a href="/cdn-cgi/l/email-protection#62080d110a2211150b04160a0f4c010d0f"><span class="__cf_email__" data-cfemail="aec4c1ddc6eeddd9c7c8dac6c380cdc1c3">[email&#160;protected]</span></a>
     <span class="footer-sep">·</span>
     <a href="tel:8136064255">813-606-4255</a>
   </p>
@@ -189,7 +189,7 @@
 </footer>
 
 <!-- ── RENDER SCRIPT ── -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const cb = CLUB.currentBook;
 
   // Cover image with text fallback if file is missing
@@ -237,15 +237,4 @@
     ? CLUB.pastBooks.map(b => `
         <div class="book-row">
           <span class="book-row-date">${b.sessionDate}</span>
-          <span class="book-row-title">${b.title}</span>
-          <span class="book-row-author">${b.author}</span>
-        </div>
-      `).join('')
-    : `<div class="book-row" style="opacity:0.35;font-style:italic;">
-        <span class="book-row-date">—</span>
-        <span class="book-row-title">No past sessions yet</span>
-      </div>`;
-</script>
-
-</body>
-</html>
+          <span class="book-row-title"
