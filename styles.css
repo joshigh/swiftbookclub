@@ -1,0 +1,505 @@
+/* ═══════════════════════════════════════
+   Swift Business Book Club — styles.css
+   Shared across all pages
+═══════════════════════════════════════ */
+
+/* ── TOKENS ── */
+:root {
+  --green:      #1a4040;
+  --green-mid:  #1e4a45;
+  --green-light:#2a5a54;
+  --gold:       #c49a3a;
+  --gold-light: #d4aa50;
+  --oxblood:    #7a2d2d;
+  --cream:      #f4efe6;
+  --text-muted: rgba(244, 239, 230, 0.55);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--green);
+  color: var(--cream);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* ── TYPOGRAPHY ── */
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 28px;
+}
+
+h2 em { font-style: italic; color: var(--gold); }
+
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(196,154,58,0.2);
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+
+/* ── LAYOUT ── */
+section {
+  padding: 96px 32px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(196,154,58,0.15);
+  margin: 0;
+}
+
+/* ── LABELS & RULES ── */
+.section-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.rule {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 48px;
+  opacity: 0.6;
+}
+
+/* ── BUTTON ── */
+.btn-primary {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--gold);
+  padding: 16px 40px;
+  text-decoration: none;
+  border-radius: 1px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 32px 60px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(196,154,58,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(122,45,45,0.12) 0%, transparent 55%),
+    var(--green);
+  border-bottom: 1px solid rgba(196,154,58,0.2);
+}
+
+/* Subtle crosshatch texture — pure CSS, no image file needed */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(196,154,58,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196,154,58,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 88px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 em { font-style: italic; color: var(--gold); }
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  max-width: 520px;
+}
+
+.hero-meta {
+  margin-top: 36px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ── FORMAT GRID ── */
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(196,154,58,0.15);
+  border: 1px solid rgba(196,154,58,0.15);
+  margin: 48px 0;
+}
+
+@media (max-width: 560px) {
+  .format-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.format-cell {
+  background: rgba(26,64,64,0.6);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.format-cell .val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.format-cell .lbl {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── SESSION FLOW ── */
+.session-flow { margin: 48px 0; display: flex; flex-direction: column; }
+
+.flow-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(196,154,58,0.1);
+}
+
+.flow-item:last-child { border-bottom: none; }
+
+.flow-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: var(--gold);
+  min-width: 72px;
+  padding-top: 2px;
+  font-style: italic;
+}
+
+.flow-title {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.flow-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── WHO SECTION ── */
+.who-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) { .who-cols { grid-template-columns: 1fr; } }
+
+.who-col.not h3 { color: rgba(244,239,230,0.4); border-color: rgba(255,255,255,0.07); }
+
+.who-col ul { list-style: none; padding: 0; }
+
+.who-col li {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 8px 0 8px 20px;
+  position: relative;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.who-col li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 6px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.who-col.not li::before { background: rgba(255,255,255,0.2); }
+
+/* ── CURRENT BOOK ── */
+.book-feature-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+
+.book-section {
+  background: rgba(196,154,58,0.06);
+  border: 1px solid rgba(196,154,58,0.2);
+  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 660px) {
+  .book-section { grid-template-columns: 1fr; padding: 40px 28px; }
+  .book-cover { justify-self: center; }
+}
+
+.book-cover { width: 160px; flex-shrink: 0; }
+
+.book-cover img {
+  width: 100%;
+  display: block;
+  box-shadow: -6px 6px 24px rgba(0,0,0,0.5), -2px 2px 0 rgba(196,154,58,0.15);
+}
+
+.book-cover-placeholder {
+  width: 160px;
+  height: 240px;
+  background: rgba(196,154,58,0.1);
+  border: 1px solid rgba(196,154,58,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--gold);
+  text-align: center;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--gold);
+  padding: 4px 12px;
+  margin-bottom: 20px;
+  border-radius: 1px;
+}
+
+.book-info .author {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.discussion-topics { margin-top: 24px; }
+
+.discussion-topics h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.topic-list { list-style: none; padding: 0; }
+
+.topic-list li {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 10px 0 10px 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(196,154,58,0.1);
+  line-height: 1.5;
+}
+
+.topic-list li:last-child { border-bottom: none; }
+
+.topic-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 8px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ── BOOK ROWS (upcoming / past) ── */
+.books-list { margin-top: 40px; display: flex; flex-direction: column; }
+
+.book-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(196,154,58,0.1);
+}
+
+.book-row:last-child { border-bottom: none; }
+
+.book-row-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gold);
+  min-width: 110px;
+}
+
+.book-row-title {
+  font-size: 15px;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+.book-row-author {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) { .book-row-author { display: none; } }
+
+/* ── INVITE ── */
+.invite-section {
+  text-align: center;
+  padding: 96px 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.invite-section p { margin: 0 auto 16px; max-width: 460px; }
+
+.include-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px auto;
+  max-width: 380px;
+  text-align: left;
+  border: 1px solid rgba(196,154,58,0.15);
+}
+
+.include-list li {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 14px 24px 14px 40px;
+  border-bottom: 1px solid rgba(196,154,58,0.1);
+  position: relative;
+  line-height: 1.5;
+}
+
+.include-list li:last-child { border-bottom: none; }
+
+.include-list li::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  width: 8px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(196,154,58,0.15);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.footer-company {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
+
+.footer-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer-meta a { color: var(--gold); text-decoration: none; }
+.footer-meta a:hover { text-decoration: underline; }
+.footer-sep { margin: 0 8px; opacity: 0.3; }
+
+.footer-nmls {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.3;
+}
