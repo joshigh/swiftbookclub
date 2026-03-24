@@ -20,9 +20,9 @@ const CLUB = {
   },
 
   upcomingBook: {
-    title:       "To be announced",
-    author:      "",
-    sessionDate: "May 2025"
+    title:       "Atomic Habits",
+    author:      "James Clear",
+    sessionDate: "Thursday, April 23 · 4:00 pm"
   },
 
   pastBooks: [
