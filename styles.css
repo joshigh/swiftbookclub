@@ -54,8 +54,8 @@ h3 {
 
 p {
   color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.85;
   margin-bottom: 20px;
   max-width: 640px;
 }
@@ -249,15 +249,15 @@ section {
 
 .flow-title {
   font-weight: 500;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--cream);
   margin-bottom: 4px;
 }
 
 .flow-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
 }
 
@@ -276,11 +276,11 @@ section {
 .who-col ul { list-style: none; padding: 0; }
 
 .who-col li {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
   padding: 8px 0 8px 20px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
@@ -380,12 +380,12 @@ section {
 .topic-list { list-style: none; padding: 0; }
 
 .topic-list li {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
   padding: 10px 0 10px 20px;
   position: relative;
   border-bottom: 1px solid rgba(196,154,58,0.1);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .topic-list li:last-child { border-bottom: none; }
@@ -422,13 +422,13 @@ section {
 }
 
 .book-row-title {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--cream);
   font-weight: 400;
 }
 
 .book-row-author {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-muted);
   margin-left: auto;
   white-space: nowrap;
@@ -461,12 +461,12 @@ section {
 }
 
 .include-list li {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
   padding: 14px 24px 14px 40px;
   border-bottom: 1px solid rgba(196,154,58,0.1);
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .include-list li:last-child { border-bottom: none; }
